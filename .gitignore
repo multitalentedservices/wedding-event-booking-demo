@@ -1,0 +1,19 @@
+# PHP / Composer
+vendor/
+# Node
+node_modules/
+dist/
+build/
+# Laravel-style runtime (if the engine is built on it)
+storage/*.key
+bootstrap/cache/*.php
+# Logs / OS / editor
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Env / secrets
+.env
+.env.*
+!.env.example
