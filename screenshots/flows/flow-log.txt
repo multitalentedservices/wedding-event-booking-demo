@@ -1,0 +1,21 @@
+PASS  empty state NAMES constraints -> No venue matches city = Karachi, capacity = More than 800 guests. Try widening the capacity band or choosing another city.
+PASS  reset restores full count -> Showing 6 of 6 venues
+PASS  availability BEFORE -> 11 of 14 season Saturdays are still available at The Ivory Court.
+PASS  5 Dec button enabled BEFORE -> Saturday 5 Dec 2026Available
+PASS  booked-date rejection NAMES venue + date -> The Ivory Court is already booked on Saturday 12 Dec 2026. The nearest available Saturdays are Saturday 5 Dec 2026 and Saturday 28 Nov 2026.
+PASS  rejection suggests nearest alternatives
+PASS  FIRING whatsapp log -> [{"venue":"The Ivory Court","at":"Sunday 22 Nov 2026","channel":"WhatsApp (demo log)"}]
+PASS  capacity+1 (401 of 400) error CONTENT -> The Ivory Court holds a maximum of 400 guests — 401 guests is more than the venue can seat.
+PASS  guests == capacity (400) clears the error live
+PASS  bad phone error CONTENT -> Enter a valid Pakistani mobile number: 03 followed by 9 more digits (11 digits total).
+PASS  valid phone clears error live
+PASS  live total before submit = PKR 1,470,000 -> PKR 1,470,000
+PASS  confirmation ref -> WD-DEMO-8048
+PASS  confirmation itemised total PKR 1,470,000
+PASS  confirmation states demo / no payment
+PASS  5 Dec button AFTER enquiry -> Saturday 5 Dec 2026Booked by you
+PASS  availability AFTER -> 10 of 14 season Saturdays are still available at The Ivory Court.
+PASS  My Enquiries contains ref + total
+PASS  status after cancel -> Cancelled
+PASS  5 Dec button FREED after cancel -> Saturday 5 Dec 2026Available
+PASS  availability RESTORED -> 11 of 14 season Saturdays are still available at The Ivory Court.

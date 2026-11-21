@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Venues — Dilnaaz Weddings (Demo)</title>
+<meta name="description" content="Browse six fictional wedding venues by city, capacity and setting, with live season availability. Demo site.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="venues">
+<a class="vh" href="#main">Skip to content</a>
+<div class="demo-banner"><strong>Demo</strong> · Dilnaaz Weddings &amp; Events is a fictional demo by BalanceBit Solutions / MTS — all venues, prices and reviews are demo data.</div>
+<header class="site-head"><div class="wrap head-in">
+<a class="brand" href="index.html">Dilnaaz<small>Weddings &amp; Events · Demo</small></a>
+<nav class="main-nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="venues.html" aria-current="page">Venues</a>
+<a href="packages.html">Packages</a>
+<a href="enquire.html">Enquire</a>
+<a href="enquiries.html">My Enquiries</a>
+</nav>
+<span class="clock-chip">Demo today: Sunday 22 Nov 2026</span>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+<section class="block">
+<p class="eyebrow">Venues</p><h1 style="font-size:2.4rem">Six venues, three cities, one season</h1>
+<p class="muted" style="max-width:40rem">Filter by city, capacity and setting. Counts update live, and every card shows how many of the 14 season Saturdays are still free — as of the printed demo date, Sunday 22 Nov 2026.</p>
+<form class="filters" style="margin-top:1.2rem" onsubmit="return false">
+  <div class="field"><label for="f-city">City</label><select id="f-city" data-f-city><option value="all">All cities</option><option>Lahore</option><option>Gujranwala</option><option>Karachi</option></select></div>
+  <div class="field"><label for="f-band">Capacity</label><select id="f-band" data-f-band><option value="all">Any capacity</option><option value="le400">Up to 400 guests</option><option value="401-800">401 – 800 guests</option><option value="gt800">More than 800 guests</option></select></div>
+  <div class="field"><label for="f-setting">Setting</label><select id="f-setting" data-f-setting><option value="all">Indoor or outdoor</option><option value="indoor">Indoor</option><option value="outdoor">Outdoor</option></select></div>
+  <div class="field"><label for="f-sort">Sort by</label><select id="f-sort" data-f-sort><option value="capacity-asc">Capacity — smallest first</option><option value="capacity-desc">Capacity — largest first</option><option value="fee-asc">Venue fee — lowest first</option><option value="fee-desc">Venue fee — highest first</option></select></div>
+</form>
+<p class="count-line" data-v-count aria-live="polite"></p>
+<div class="grid cols-3" data-v-grid></div>
+<div class="empty" data-v-empty hidden><h2>No venue matches those filters</h2><p data-v-empty-msg></p><button type="button" class="btn" data-v-reset>Reset all filters</button></div>
+</section>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p><strong>Dilnaaz Weddings &amp; Events (demo)</strong> — a fictional wedding &amp; events company. Venues in Lahore, Gujranwala and Karachi; wedding season October–February. Every venue, package, date and review on this site is demo data; no payment is taken and no booking is confirmed.</p>
+<p>Demo enquiries: hello@dilnaaz-events.example · +92 300 123 4567 (fictional) · Built as a portfolio demo — client-facing owner BalanceBit Solutions, production MTS (Pricing v3: Business tier + Booking add-on).</p>
+</div></footer>
+<script src="js/logic.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

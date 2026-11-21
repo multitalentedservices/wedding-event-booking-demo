@@ -1,0 +1,33 @@
+# BUILD NOTES — Queue #14 · Wedding & Event Booking Demo (FINAL queue project)
+**Build:** "Dilnaaz Weddings & Events" — fictional wedding & events company; venues in Lahore, Gujranwala and Karachi (fictional demo addresses). Client-facing owner: BalanceBit Solutions · production: MTS · DEMO labelling on every page.
+**Brief mapping:** seeded README — Events (venues, packages, date enquiry, wedding season Oct–Feb), "Editorial Luxury" design system, integrations as demo data: date-availability enquiry, package pages, WhatsApp (firing recorded locally). Pricing v3 mapping: Business tier + Booking add-on.
+
+## Design identity — "Editorial Luxury, wedding register"
+- Warm ivory ground #FAF6EF, **deep burgundy/maroon #5C1A24** primary (a hue no predecessor used), burgundy-dark #3E1119 for the banner/dark band, charcoal ink #2A2320, muted #655349. **Gold #E3B959 appears ONLY as small-caps labels and hairlines on the dark burgundy ground** — never as a light-ground accent, never a second palette (the Gift Basket v1 warning). The only extra hue is the semantic error red #B3261E.
+- Type: **Marcellus** (display serif — free in the ladder; Cormorant/Fraunces/Lora/Playfair were taken) + **Karla** (clean sans — free; Mulish also free, Karla's warmth fits the register).
+- Distinctness vs predecessors: Gift Basket (#2) was cream/terracotta/emerald with a shop grid; Travel (#10) was plum/sand/gold-dusk with Playfair and a departure-led tour layout; Salon (#4) was porcelain/blush/bronze with Cormorant. This build's burgundy-on-ivory register, Marcellus small-caps labels, and a **season-Saturday availability strip** could not be mistaken for any of them — a grid of date buttons marked Available / Already booked / Booked by you belongs to a wedding venue business and nothing else (§0 screenshot test).
+
+## References actually used (fresh research, 2026-11-21)
+1. **Venuquest — Pakistan's wedding marketplace** (venuquest.pk, opened via search 2026-11-21). Taken: the market shape — venues compared side-by-side with **prices upfront**, season-led framing ("featured this season"), and a shortlist flow that starts from date + guests + city. Applied as: catalogue filters start from city/capacity/setting, every card prints its venue fee and live free-Saturday count, and the home hero leads with the season. No branding, copy or data copied.
+2. **"How to Design a Website for a Wedding Venue"** (fatcowwebdesign.com guide, opened via search 2026-11-21). Taken: the three-objection page order — *Is our date available? Can we afford it? Does everyone fit?* — answered in that order: availability strip on every venue detail, per-guest package pricing printed before the enquiry, capacity printed on every card and enforced at the boundary. No text or assets copied.
+3. Design Inspiration Library: no wedding section existed; the restraint discipline of C1/C2 (hierarchy before decoration) informed the single-accent discipline only. This build is the library's first wedding reference point.
+
+## Architecture
+- `js/logic.js` — ONE pure-logic module + ONE data object (COMPANY: 6 venues with their booked dates, 3 packages, 4 add-ons, 14 season Saturdays, reviews) shared by the site and the Node battery (lessons 13/46). Availability is one predicate (`isBooked`) read by the venue strip, the enquiry strip, the card counts and the battery — a user enquiry joins the same predicate via localStorage, so "booked by you" can never drift between surfaces (lessons 30/38).
+- Pages (6): index (season-led hero, 3-fact strip, how-it-works band, featured venues, package teaser, fictional reviews labelled demo) · venues (city + capacity band + indoor/outdoor filters with live counts, 4 sorts, URL state in sync — lesson 28, constraint-naming empty state with one-click reset) · venue.html?id= (dynamic detail, features, availability strip of real buttons — booked dates **disabled** with strikethrough + "Already booked", lesson 50; WhatsApp per venue with firing recorded — lesson 21) · packages (3 per-guest packages, add-on price table, worked example with exact arithmetic) · enquire (venue/package preselected from detail, date strip, guests bounded by capacity, add-ons, name/PK-phone/email validation with named errors + live clearing — lessons 25/26) · enquiries (My Enquiries list + cancel).
+- **Boundary in the data (lesson 41):** Roshanara Marquee is booked on 12 of 14 season Saturdays — only 20 & 27 Feb 2027 remain — and the peak Saturday 12 Dec 2026 is booked at three venues. The printed fixed demo clock is **Sunday 22 Nov 2026**, inside wedding season (lesson 29).
+- **Enquiry proof:** The Ivory Court + Baraat Signature, Sat 5 Dec 2026, 400 guests (== capacity, boundary pair), floral stage + photography → **WD-DEMO-8048, PKR 1,470,000 exact** (280,000 + 2,650 × 400 = 1,060,000 + 130,000). After sending, 5 Dec shows disabled "Booked by you" on the venue page (11 → 10 free); cancelling in My Enquiries frees it again (10 → 11) — before/after captures filed.
+- Media: 8 generated photos (hero + 1 per venue + 1 stage detail), one consistent warm editorial wedding style, compressed under a hard ≤120 KB ceiling BEFORE referencing (lesson 39): total 906,551 B. **Video: none — photo + CSS motion** (Ken Burns hero, disabled under reduced motion; video generation region-blocked 403, not attempted).
+
+## Fix-iterate cycles during QA (caught by reading captures, not audits)
+1. Add-on checkbox rows on the enquiry page rendered stacked (checkbox alone, text below, price inline): the global `.field label{display:block}` rule (specificity 0,1,1) silently beat `.check-line{display:flex}` (0,1,0) — lesson 16 in its exact predecessor form. Fixed by scoping the component rule to `.field .check-line`; re-captured: checkbox / name+note / right-aligned price on one row.
+2. Venue select option text truncated mid-word at 390px ("…Lahore (up…") → option labels shortened to "Name — City (max N)"; re-captured clean.
+3. Keyboard-walk record corrected: native selects/inputs show their focus as the field system's burgundy border + ring, not an outline — the walk header now states this instead of claiming an outline the computed record contradicts (lesson 40: read the evidence, not the intention).
+
+## Test battery amendments
+- None. 132 PASS / 0 FAIL with no assertion amended.
+
+## Evidence index
+- tests.js + tests-output.log — 132 PASS / 0 FAIL (incl. 14 contrast assertions from hex, capacity boundary pair, booked-date rejection + alternatives, date free/restore round-trip).
+- screenshots/ — 18 standard combos + probe320 + nojs (18) + reduced (18), all audits 0/0/0; screenshots/flows/flow-log.txt — 21/21 PASS; screenshots/keyboard/keyboard-walk.md.
+- Signoff-Pack.md (Area 1) · Performance-Pack.md (Area 7).

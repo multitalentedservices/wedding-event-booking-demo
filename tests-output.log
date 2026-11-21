@@ -1,0 +1,134 @@
+PASS  6 venues
+PASS  3 packages
+PASS  4 add-ons
+PASS  14 season dates
+PASS  3 fictional reviews
+PASS  venue ids unique
+PASS  every venue has name/city/capacity/setting/fee/img/features>=4
+PASS  every venue image file exists on disk
+PASS  every booked date is a season date
+PASS  every package has per-guest price + >=5 inclusions
+PASS  every add-on has an exact positive price
+PASS  cities are Lahore x2, Gujranwala x2, Karachi x2
+PASS  demo clock is Sunday 22 Nov 2026
+PASS  demo clock label printed
+PASS  season starts Sat 28 Nov 2026
+PASS  season ends Sat 27 Feb 2027
+PASS  every season date is a Saturday
+PASS  venue 1 nearly fully booked: exactly 2 free Saturdays
+PASS  venue 1 free dates are the last two Saturdays
+PASS  peak Saturday 12 Dec 2026 is booked at venue 1
+PASS  peak Saturday 12 Dec 2026 is booked at venue 2
+PASS  peak Saturday 12 Dec 2026 is booked at venue 5
+PASS  venue 2 has 11 free Saturdays
+PASS  venue 2 is free on Sat 5 Dec 2026 (the flow date)
+PASS  booked date rejected
+PASS  rejection NAMES the venue
+PASS  rejection NAMES the date
+PASS  rejection says already booked
+PASS  alternatives are the two nearest free Saturdays
+PASS  alternatives are named in the error text
+PASS  free date passes
+PASS  empty date rejected with guidance
+PASS  out-of-season date rejected naming the season
+PASS  user enquiry makes the date booked
+PASS  dateCheck rejects a date booked by the user
+PASS  removing the enquiry (cancel) frees the date again
+PASS  free count drops 11 -> 10 with the enquiry
+PASS  guests == capacity passes (400 of 400)
+PASS  guests == capacity+1 rejected (401 of 400)
+PASS  capacity rejection NAMES the capacity
+PASS  guests 49 rejected (minimum 50)
+PASS  guests 50 passes
+PASS  venue 3 boundary: 1200 passes, 1201 rejected
+PASS  no filters -> 6
+PASS  city Lahore -> 2
+PASS  city Gujranwala -> 2
+PASS  city Karachi -> 2
+PASS  band up to 400 -> 2
+PASS  band 401-800 -> 3
+PASS  band over 800 -> 1
+PASS  setting indoor -> 4 (incl. Indoor & outdoor)
+PASS  setting outdoor -> 3 (incl. Indoor & outdoor)
+PASS  Lahore + indoor -> 2
+PASS  Karachi + outdoor -> 1
+PASS  Gujranwala + over 800 -> 1
+PASS  Karachi + over 800 -> 0 (empty state)
+PASS  capacity-asc first is Seabreeze (300)
+PASS  capacity-desc first is Palm Grove (1200)
+PASS  fee-asc first is Noor Mahal (210,000)
+PASS  fee-desc first is Roshanara (450,000)
+PASS  flow venue fee 280,000
+PASS  flow per-guest total 2,650 x 400 = 1,060,000
+PASS  flow add-ons 85,000 + 45,000 = 130,000
+PASS  flow TOTAL = PKR 1,470,000 exact
+PASS  no add-ons -> add-ons total 0
+PASS  mehndi at venue 1, 100 guests = 450,000 + 185,000
+PASS  all four add-ons = 260,000
+PASS  formatPKR 1,470,000
+PASS  formatPKR 2,650
+PASS  name ok
+PASS  name too short rejected
+PASS  phone 0321 555 0142 ok
+PASS  phone normalised
+PASS  phone intl
+PASS  phone +92 form ok
+PASS  phone "123" rejected
+PASS  phone error names 03 + 11 digits
+PASS  email ok
+PASS  email without @ rejected
+PASS  email without domain dot rejected
+PASS  ref matches WD-DEMO-####
+PASS  ref deterministic
+PASS  ref changes with the date
+PASS  whatsapp link targets the demo number
+PASS  whatsapp text names the venue
+PASS  whatsapp text carries the venue fee
+PASS  contrast >= 4.5:1 — burgundy on ivory (primary buttons/labels) (11.97)
+PASS  contrast >= 4.5:1 — ivory on burgundy (button text is white; burgundy ground check) (12.90)
+PASS  contrast >= 4.5:1 — ivory on burgundy-dark (banner/band) (15.01)
+PASS  contrast >= 4.5:1 — ink on ivory (body) (14.34)
+PASS  contrast >= 4.5:1 — muted on ivory (6.75)
+PASS  contrast >= 4.5:1 — muted on ivory-2 (alt surface) (6.14)
+PASS  contrast >= 4.5:1 — gold on burgundy-dark (small-caps labels on dark only) (8.74)
+PASS  contrast >= 4.5:1 — gold on burgundy (labels on burgundy) (6.97)
+PASS  contrast >= 4.5:1 — error red on ivory (6.07)
+PASS  contrast >= 4.5:1 — burgundy on ivory-2 (tags) (10.89)
+PASS  contrast >= 4.5:1 — ink on ivory-2 (13.05)
+PASS  contrast >= 4.5:1 — disabled text on disabled ground (4.63)
+PASS  contrast >= 4.5:1 — gold-hairline stars on white card (4.90)
+PASS  focus outline burgundy on ivory >= 3:1 (11.97)
+PASS  index.html carries DEMO labelling
+PASS  venues.html carries DEMO labelling
+PASS  venue.html carries DEMO labelling
+PASS  packages.html carries DEMO labelling
+PASS  enquire.html carries DEMO labelling
+PASS  enquiries.html carries DEMO labelling
+PASS  index.html has a unique title
+PASS  venues.html has a unique title
+PASS  venue.html has a unique title
+PASS  packages.html has a unique title
+PASS  enquire.html has a unique title
+PASS  enquiries.html has a unique title
+PASS  no lorem ipsum anywhere
+PASS  no live analytics endpoints in source
+PASS  no external embeds (maps/iframes)
+PASS  global [hidden] rule present from base CSS (lesson 47)
+PASS  disabled button state is a solid system state (lesson 50)
+PASS  disabled date buttons styled (lesson 50)
+PASS  every internal href target exists
+PASS  sitemap + robots exist
+PASS  reviews labelled demo in data
+PASS  code weight < 400 KB (actual 67163 B)
+PASS  image hero.jpg <= 120 KB (116413 B)
+PASS  image stage-detail.jpg <= 120 KB (114137 B)
+PASS  image venue-clifton.jpg <= 120 KB (114011 B)
+PASS  image venue-ivory.jpg <= 120 KB (111202 B)
+PASS  image venue-noor.jpg <= 120 KB (114776 B)
+PASS  image venue-palm.jpg <= 120 KB (117306 B)
+PASS  image venue-roshanara.jpg <= 120 KB (111670 B)
+PASS  image venue-seabreeze.jpg <= 120 KB (107036 B)
+PASS  media total <= 1.6 MB (actual 906551 B)
+PASS  8 photos on disk
+
+TOTAL: 132 PASS / 0 FAIL

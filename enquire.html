@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Date Enquiry — Dilnaaz Weddings (Demo)</title>
+<meta name="description" content="Send a date enquiry: venue, package, season date, guests and add-ons with an itemised total. Demo site.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="enquire">
+<a class="vh" href="#main">Skip to content</a>
+<div class="demo-banner"><strong>Demo</strong> · Dilnaaz Weddings &amp; Events is a fictional demo by BalanceBit Solutions / MTS — all venues, prices and reviews are demo data.</div>
+<header class="site-head"><div class="wrap head-in">
+<a class="brand" href="index.html">Dilnaaz<small>Weddings &amp; Events · Demo</small></a>
+<nav class="main-nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="venues.html">Venues</a>
+<a href="packages.html">Packages</a>
+<a href="enquire.html" aria-current="page">Enquire</a>
+<a href="enquiries.html">My Enquiries</a>
+</nav>
+<span class="clock-chip">Demo today: Sunday 22 Nov 2026</span>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+<section class="block">
+<p class="eyebrow">Date enquiry</p><h1 style="font-size:2.4rem">Check your date, see your total</h1>
+<p class="muted" style="max-width:42rem">Choose a venue, a package and an available season Saturday. Booked dates are disabled in the strip; if a booked date reaches the form any other way, it is rejected with the venue, the date and the nearest free Saturdays named.</p>
+<div data-confirm hidden></div>
+<div class="enq-layout" style="margin-top:1.3rem">
+<form data-enq-form novalidate>
+  <div class="panel form-grid">
+    <div class="field"><label for="enq-venue">Venue</label><select id="enq-venue"></select></div>
+    <div class="field"><label for="enq-package">Package</label><select id="enq-package"></select></div>
+    <div class="field"><label id="enq-date-label">Event date — season Saturdays</label>
+      <div data-date-strip role="group" aria-labelledby="enq-date-label"></div>
+      <p class="err" data-err-for="enq-date" hidden></p></div>
+    <div class="field"><label for="enq-guests">Guests</label><input id="enq-guests" type="number" inputmode="numeric" min="50" step="1" value="200">
+      <p class="err" data-err-for="enq-guests" hidden></p></div>
+    <fieldset class="field" style="border:none;padding:0;margin:0"><legend style="font-weight:700;margin-bottom:.35rem">Add-ons (optional)</legend><div data-addon-list></div></fieldset>
+    <div class="field"><label for="enq-name">Your full name</label><input id="enq-name" type="text" autocomplete="name" placeholder="For example, Ayesha Khan">
+      <p class="err" data-err-for="enq-name" hidden></p></div>
+    <div class="field"><label for="enq-phone">Mobile (WhatsApp)</label><input id="enq-phone" type="tel" autocomplete="tel" placeholder="03XX XXXXXXX">
+      <p class="err" data-err-for="enq-phone" hidden></p></div>
+    <div class="field"><label for="enq-email">Email</label><input id="enq-email" type="email" autocomplete="email" placeholder="name@example.com">
+      <p class="err" data-err-for="enq-email" hidden></p></div>
+    <button type="submit" class="btn">Send date enquiry (demo)</button>
+    <p class="muted" style="margin:0">Demo only — nothing is sent anywhere, no payment is taken and no booking is confirmed.</p>
+  </div>
+</form>
+<aside class="panel" data-total-panel aria-live="polite">
+  <h3>Your itemised total</h3>
+  <table class="total-table"><tbody>
+    <tr><td>Venue fee</td><td data-t-venue>—</td></tr>
+    <tr><td>Package per guest</td><td data-t-per>—</td></tr>
+    <tr><td>Package total</td><td data-t-per-total>—</td></tr>
+    <tr><td>Add-ons</td><td data-t-addons>—</td></tr>
+    <tr class="grand"><td>Total</td><td data-t-grand>—</td></tr>
+  </tbody></table>
+  <p class="muted">Updates live as you change venue, package, guests and add-ons.</p>
+</aside>
+</div>
+</section>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p><strong>Dilnaaz Weddings &amp; Events (demo)</strong> — a fictional wedding &amp; events company. Venues in Lahore, Gujranwala and Karachi; wedding season October–February. Every venue, package, date and review on this site is demo data; no payment is taken and no booking is confirmed.</p>
+<p>Demo enquiries: hello@dilnaaz-events.example · +92 300 123 4567 (fictional) · Built as a portfolio demo — client-facing owner BalanceBit Solutions, production MTS (Pricing v3: Business tier + Booking add-on).</p>
+</div></footer>
+<script src="js/logic.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
