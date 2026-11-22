@@ -119,7 +119,7 @@ PASS  disabled date buttons styled (lesson 50)
 PASS  every internal href target exists
 PASS  sitemap + robots exist
 PASS  reviews labelled demo in data
-PASS  code weight < 400 KB (actual 67163 B)
+PASS  code weight < 400 KB (actual 67473 B)
 PASS  image hero.jpg <= 120 KB (116413 B)
 PASS  image stage-detail.jpg <= 120 KB (114137 B)
 PASS  image venue-clifton.jpg <= 120 KB (114011 B)

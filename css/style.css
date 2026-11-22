@@ -153,6 +153,11 @@ footer.site-foot a{color:var(--burgundy)}
   padding:.7rem 1.1rem;border-radius:var(--radius-s);font-weight:600;z-index:5;max-width:92vw;text-align:center}
 
 @media (max-width:900px){
+  /* Round-2 fix (WE-1): deliberate header rows — brand + demo-date chip share row 1,
+     the nav takes its own full-width row inside the container inset instead of
+     wrapping accidentally and pushing the chip below it. */
+  .clock-chip{margin-left:auto}
+  .main-nav{order:3;flex-basis:100%;margin-left:0}
   .grid.cols-3{grid-template-columns:1fr 1fr}
   .filters{grid-template-columns:1fr 1fr}
   .enq-layout{grid-template-columns:1fr}

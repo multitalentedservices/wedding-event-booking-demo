@@ -40,3 +40,29 @@ Next step: [X] To AICOS-025 release gate (with external acts named)   [ ] Back t
 - Captures: 18 standard + 1 probe320 + 18 nojs + 18 reduced + 9 flow + 3 keyboard = 67 PNGs; every audit 0 overflow / 0 leaf text-overflow / 0 broken images / 0 hidden sections.
 - Index captures (owner rule): screenshots/index-desktop.png = 1440×3452 · screenshots/index-phone.png = 390×8000 (full-page, measured).
 - Video: none — photo + CSS motion (generation region-blocked 403, not attempted).
+
+## Addendum — Round-2 Re-verification FIX RUN (2026-11-22)
+
+Independent round-2 re-verification (`Reverification-2026-11-21/round2/REPORT.md`) filed 1 minor
+defect on this site (WE-1). Addressed, re-shot and read; battery **132 PASS / 0 FAIL** unamended
+after fixes:
+
+- **WE-1 (minor) — Header at ≤768px: filed as flush-left with a two-row nav wrap.** As with
+  CB-1, the flush-left half does **not** reproduce on direct measurement: the round-2
+  script's `firstChildLeft` reads the `.wrap` box (full-width on phone by construction),
+  while the brand wordmark itself sat at left=20px at 768/390/320 before any change —
+  `.head-in` already uses `padding-block`, so the wrap's inline padding survives. No inset
+  fix was needed or made. The real nit is the accidental arrangement, and it is fixed: at
+  ≤900px the demo-date chip now stays on row 1 with the brand (`margin-left:auto`) and the
+  nav takes its own deliberate full-width row inside the inset (`order:3;flex-basis:100%`)
+  instead of wrapping mid-row and pushing the chip below it — **tablet header 184px →
+  137px**, nav on one aligned row. On phone the chip is hidden by the site's own ≤560px
+  rule (unchanged) and the nav's two rows are now a structured block under the brand
+  (177px, unchanged height, aligned throughout). Proof: DOM geometry before/after +
+  re-shoot combos + probe320, 0 problems (`round2/fix2-wedding-event-booking/`);
+  index-tablet.png and index-phone.png read by eye.
+
+Score unchanged: **91/100 — REJECT (evidence bar only)** — served-preview CWV + AICOS-112 §0
+sign-off still outstanding; defect repairs do not manufacture them.
+Push of the changed text files (css/style.css, Scorecard-Verdict.md, tests-output.log) is
+pending the GitHub connector's approval card — see FIX-REPORT-ROUND2.md.
