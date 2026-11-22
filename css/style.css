@@ -19,7 +19,8 @@ body{margin:0;background:var(--ivory);color:var(--ink);
   font-family:"Karla",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55}
 h1,h2,h3,.display{font-family:"Marcellus",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
 img{max-width:100%;display:block}
-a{color:var(--burgundy)}
+a{color:var(--burgundy);text-decoration:none}
+ul{margin:.2rem 0 0;padding-left:1.15rem}
 :focus-visible{outline:3px solid var(--burgundy);outline-offset:2px}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
@@ -172,3 +173,82 @@ footer.site-foot a{color:var(--burgundy)}
   .head-in{gap:.5rem}
   .clock-chip{display:none}
 }
+
+/* ===== Premium upgrade 2026-11-22 — THE FINALE (appended; the audit-fixed
+   base link/list rules above are NOT modified by this block) ===== */
+@view-transition{navigation:auto}
+@media (prefers-reduced-motion: reduce){ @view-transition{navigation:none} }
+
+/* display typography (P4): the hero statement steps up to display scale */
+.hero h1{font-size:clamp(2.9rem,6.5vw,5.2rem);line-height:1.02;letter-spacing:-.02em}
+@media (max-width:900px){ .hero h1{font-size:clamp(2.4rem,8.5vw,3.6rem)} }
+@media (max-width:560px){ .hero h1{font-size:2.15rem} }
+
+/* micro-interactions (P7) */
+.btn{transition:background-color .25s ease,border-color .25s ease,color .25s ease,transform .15s ease}
+.btn:active{transform:translateY(1px)}
+.vcard{transition:box-shadow .25s ease,transform .25s ease}
+.vcard:hover{box-shadow:0 12px 30px rgba(62,17,25,.12);transform:translateY(-2px)}
+@media (prefers-reduced-motion: reduce){ .vcard:hover{transform:none} }
+
+/* venue chapters — static sequence (complete without JS / reduced motion) */
+.chapters{padding:2.8rem 0 .4rem}
+.chapters-head{padding-bottom:.4rem}
+.chapter-static{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;
+  max-width:1180px;margin:0 auto;padding:2rem 20px;border-top:1px solid var(--line)}
+.chapter-photo img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius)}
+.chapter-name{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.02;letter-spacing:-.015em;margin-bottom:.6rem}
+.chapter-facts{font-weight:800;font-size:1.05rem}
+
+/* venue chapters — pinned stage (built by premium.js only when the full
+   stack is present and motion is allowed; the static sequence above is
+   hidden only in that case) */
+.chapters-stage{position:relative;height:100vh;overflow:hidden;background:var(--burgundy-dark)}
+.chapter-panel{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;visibility:hidden}
+.chapter-panel:first-child{visibility:visible}
+.chapter-panel .chapter-photo{overflow:hidden}
+.chapter-panel .chapter-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:auto}
+.chapter-panel .chapter-body{display:flex;flex-direction:column;justify-content:center;gap:.7rem;
+  padding:2.5rem clamp(1.2rem,4vw,3.5rem);color:var(--ivory)}
+.chapter-panel .eyebrow{color:var(--gold)}
+.chapter-name-xl{font-family:"Marcellus",Georgia,serif;font-size:clamp(3.1rem,9.5vw,7.8rem);
+  line-height:.96;letter-spacing:-.02em;color:var(--ivory)}
+.chapter-panel .chapter-facts{color:var(--ivory)}
+.chapter-panel .chapter-blurb{color:var(--ivory);font-size:1.08rem;max-width:30rem}
+.chapter-count{position:absolute;right:clamp(1rem,3vw,2.5rem);bottom:1.2rem;z-index:6;
+  color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.22em}
+@media (max-width:760px){
+  .chapter-static{grid-template-columns:1fr}
+  .chapter-panel{grid-template-columns:1fr;grid-template-rows:42% 58%}
+  .chapter-name-xl{font-size:clamp(2.6rem,13vw,4rem)}
+}
+
+/* cinematic date strip (premium.js restructures each date button's label
+   into dow / day-number / month-year / status spans; the base .date-btn
+   system — including the disabled state — is unchanged) */
+.date-strip.cine .date-btn{min-width:9.2rem;padding:.75rem .9rem;text-align:left;line-height:1.15}
+.date-btn .dow{display:block;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.date-btn .dnum{display:block;font-family:"Marcellus",Georgia,serif;font-size:1.85rem;line-height:1.05}
+.date-btn .dmy{display:block;font-size:.85rem;font-weight:600}
+.date-btn[aria-pressed="true"] .dow{color:var(--ivory)}
+.date-btn[disabled] .dow,.date-btn[disabled] .dnum,.date-btn[disabled] .dmy{color:inherit}
+
+/* Wedding OS demo surfaces on My Enquiries (RSVP + guest list + registry,
+   sharing the enquiry's own dataset; demo-labelled) */
+.os-panel{border-top:1px solid var(--line);margin-top:1rem;padding-top:1rem}
+.os-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.os-box{background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius-s);padding:.95rem 1.05rem}
+.os-box h4{font-family:"Marcellus",Georgia,serif;font-weight:400;font-size:1.12rem;margin:0 0 .4rem}
+.os-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.35rem 0}
+.os-num{font-family:"Marcellus",Georgia,serif;font-size:1.5rem;min-width:2.2ch;text-align:center}
+.os-step{width:44px;height:44px;border-radius:50%;border:2px solid var(--burgundy);background:var(--paper);
+  color:var(--burgundy);font:inherit;font-weight:800;font-size:1.15rem;cursor:pointer;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center}
+.os-step:hover{background:var(--ivory-2)}
+.os-step[disabled]{background:var(--disabled-bg);border-color:var(--line);color:var(--disabled-text);cursor:not-allowed}
+.os-reg{list-style:none;margin:.3rem 0 0;padding:0}
+.os-reg li{display:flex;align-items:center;gap:.6rem;padding:.45rem 0;border-bottom:1px solid var(--ivory-2)}
+.os-reg li:last-child{border-bottom:none}
+.os-reg .rg-name{flex:1}
+.os-reg .rg-state{font-size:.8rem;font-weight:700;color:var(--muted)}
+@media (max-width:760px){ .os-grid{grid-template-columns:1fr} }

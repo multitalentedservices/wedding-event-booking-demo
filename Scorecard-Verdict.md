@@ -66,3 +66,94 @@ Score unchanged: **91/100 — REJECT (evidence bar only)** — served-preview CW
 sign-off still outstanding; defect repairs do not manufacture them.
 Push of the changed text files (css/style.css, Scorecard-Verdict.md, tests-output.log) is
 pending the GitHub connector's approval card — see FIX-REPORT-ROUND2.md.
+
+## Addendum — Premium Upgrade (2026-11-22, Ladder #14 — THE FINALE)
+
+The full stack at its most refined, inside P8: Lenis + GSAP pinned venue chapters
++ SplitText hero + cinematic availability + Zola/Knot-depth demo surfaces sharing
+the enquiry's dataset. Existing battery **132 PASS / 0 FAIL, unamended**, before
+and after; original flow suite **21/21** after; new `premium-checks.js`
+**44 PASS / 0 FAIL**.
+
+What was added:
+- **Lenis 1.3.27 + GSAP 3.15.1/ScrollTrigger/SplitText** on the home page only,
+  synced on the documented gsap-ticker pattern, plugins registered explicitly,
+  all deferred, all self-hosted in `assets/vendor/` (sha256 match the Install
+  Record). SplitText gives the hero a masked line-rise (900ms, power4, 90ms
+  stagger — award medians).
+- **Pinned venue chapters (the signature scene)** — Roshanara Marquee, The Ivory
+  Court, Seabreeze Terrace, one venue per chapter: full-viewport panels on the
+  burgundy-dark ground, oversized Marcellus names (clamp to 7.8rem, lh .96,
+  tracking −0.02em), gold chapter eyebrows, photo scale-scrub, chapter counter
+  (I / III). Panels are built from WDLogic at runtime — including the **live**
+  free-Saturday count per venue — so the choreography cannot drift from the data.
+  Static fallback: the same three chapters as a complete designed vertical
+  sequence in the HTML (the no-JS and reduced-motion state, check-proven).
+- **Cinematic availability** — the date strip on venue + enquire pages is
+  re-presented (weekday small-caps / Marcellus day numeral / month-year / status)
+  by restructuring each existing button's label only: same buttons, same
+  handlers, same disabled state (exactly the 3 data-object bookings disabled at
+  The Ivory Court — check-proven). A MutationObserver re-applies it when the
+  enquire page rebuilds its strip on venue change.
+- **Wedding OS demo surfaces (Zola/Knot depth)** — every live enquiry on
+  My Enquiries gains an RSVP + guest-list box (invited = the enquiry's own guest
+  count; responses/attending steppers bounded by it, persisted per enquiry ref
+  in `wd_os`) and a registry strip listing **the enquiry's own chosen add-ons**
+  with gifted toggles. Nothing is invented: no guest names, no registry products
+  — the surfaces share the enquiry dataset, demo-labelled throughout. Cancel an
+  enquiry and its date frees exactly as before (check-proven end-to-end).
+- Display hero type (clamp to 5.2rem), card/button micro-interactions, CSS View
+  Transitions (0 KB).
+
+P1–P10 evidence:
+- **P1 PASS** — audit-fixed base rules (`a{color:var(--burgundy);
+  text-decoration:none}` + base `ul` metrics) untouched; additions appended only.
+  Premium-checks link audit: 0 offenders on all 6 pages × 390/1440.
+- **P2 PASS** — Lenis active on the hero page, ScrollTrigger-synced; reduced
+  motion = Lenis/GSAP never start, static chapters complete (check-proven).
+- **P3 PASS** — exactly one signature scroll moment (the pinned chapters);
+  hero SplitText is an entrance, not a second scene; no uniform fade-ups added.
+- **P4 PASS** — hero clamp(2.9rem, 6.5vw, 5.2rem) lh 1.02; chapter names to
+  7.8rem Marcellus; gold small-caps as the second voice for labels/data.
+- **P5 PASS** — oversized type statement + real venue photography, scrubbed;
+  no generic slider anywhere (Swiper deliberately absent — see P8).
+- **P6 PASS** — module depth stepped up: OS surfaces + cinematic availability
+  over the existing exact-total enquiry engine (PKR 1,470,000 reference total
+  re-proven in premium-checks).
+- **P7 PASS** — hover/focus-visible/active across buttons, cards, date buttons,
+  OS steppers (with true disabled states); View Transitions where supported.
+- **P8 PASS (JS, measured)** — the arithmetic that governs the finale: vendor
+  stack GSAP + ScrollTrigger + SplitText + Lenis = **55,658 B gzip** (weighed
+  by premium-checks; per-file CLI weighing: 28,435 + 18,039 + 3,660 + 5,439);
+  index total **70,670 B gzip** (≤90 KB); existing + premium together 15,012 B.
+  Plain pages **15,012 B gzip** (≤20 KB). **Swiper (44,390) and
+  Alpine (19,902) were deliberately NOT loaded**: together they would take the
+  hero page to ~115 KB and break P8, and neither has an honest job here — the
+  date strip is a button component, not a slider, and no page needs a second
+  state system. "Full stack" = the full discipline, not every file.
+  Served-preview CWV remains external-pending — not claimed.
+- **P9 PASS** — reduced-motion and no-JS states check-proven complete (static
+  chapter sequence, base date strip); all new controls are native buttons;
+  battery's 14 contrast assertions unchanged and green.
+- **P10 PASS** — DEMO labelling intact; OS/registry data derives only from the
+  visitor's own enquiries; no invented guests, vendors or gifts.
+
+Captures: all 18 standard combos + nojs (18) + reduced (18) + probe320 re-shot —
+every audit **0 overflow / 0 text-overflow / 0 broken images**; index-desktop
+1440×6779, index-phone 390×11072 staged fresh. **Known capture behaviour,
+recorded honestly:** full-page captures render the pinned stage's scroll room
+(220% of viewport) as blank ivory after Chapter I — that is how a pinned scene
+appears in a full-page screenshot, not missing content; the true mid-scene
+evidence is `screenshots/signature-moment.png` (Chapter II, The Ivory Court,
+mid-pin, counter reading II / III), read by eye. One defect was caught and fixed
+during this pass: the stage element initially missed its `chapters-stage` class,
+leaving ivory text invisible on the ivory ground — fixed, re-checked (44/44),
+re-shot and re-read.
+
+RE-SCORE: Area 2 UI/UX 14→15 (OS depth + cinematic availability on the conversion
+path) · Area 4 Animation & interactions 9→10 (Lenis + pinned scrubbed chapters +
+SplitText — a full motion discipline, no longer a single pattern). All other
+areas unchanged (Area 1 holds 2 pts for the external AICOS-112 §0 recording;
+Area 7 holds 4 pts for served-preview CWV).
+**TOTAL: 91 → 93 / 100 — verdict stays REJECT under the owner's 100-bar** until
+the two external acts are recorded. The ladder's finale is build-complete.

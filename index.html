@@ -6,10 +6,11 @@
 <title>Dilnaaz Weddings & Events — Wedding Venues & Packages (Demo)</title>
 <meta name="description" content="Fictional wedding venues, packages and date enquiries for the Oct–Feb wedding season in Lahore, Gujranwala and Karachi. Demo site.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="assets/vendor/lenis.css">
 </head>
 <body data-page="home">
 <a class="vh" href="#main">Skip to content</a>
@@ -43,6 +44,43 @@
     <div class="fact"><b>Per-guest pricing</b><span>Venue fee + package per guest + add-ons, itemised before you send</span></div>
   </div>
 </div>
+<section class="chapters" data-chapters aria-label="Featured venues, chapter by chapter">
+  <div class="wrap chapters-head">
+    <p class="eyebrow">The venues, chapter by chapter</p>
+    <h2>Three rooms the season asks about first</h2>
+    <p class="muted" style="max-width:40rem">Each chapter is one venue: its room, its capacity and its fee — every figure from the same venue data as the rest of the site. With motion on, the chapters pin and turn as you scroll; without it, they read as the plain sequence below.</p>
+  </div>
+  <!-- Static sequence (the complete no-JS / reduced-motion state). premium.js
+       replaces this with the pinned GSAP choreography only when GSAP +
+       ScrollTrigger load and motion is allowed. Facts mirror js/logic.js. -->
+  <div data-chapters-static>
+    <article class="chapter-static">
+      <div class="chapter-photo"><img src="assets/venue-roshanara.jpg" alt="Roshanara Marquee — wedding venue photograph (demo)"></div>
+      <div class="chapter-body"><p class="eyebrow">Chapter I · Lahore · Indoor</p>
+      <h3 class="chapter-name">Roshanara Marquee</h3>
+      <p>The grand marquee of the season — a high-ceilinged hall built for large baraats.</p>
+      <p class="chapter-facts">Up to 800 guests · PKR 450,000 venue fee</p>
+      <p><a class="btn" href="venue.html?id=1">View venue &amp; dates</a></p></div>
+    </article>
+    <article class="chapter-static">
+      <div class="chapter-photo"><img src="assets/venue-ivory.jpg" alt="The Ivory Court — wedding venue photograph (demo)"></div>
+      <div class="chapter-body"><p class="eyebrow">Chapter II · Lahore · Indoor</p>
+      <h3 class="chapter-name">The Ivory Court</h3>
+      <p>A calm, light-filled court for weddings that want elegance over scale.</p>
+      <p class="chapter-facts">Up to 400 guests · PKR 280,000 venue fee</p>
+      <p><a class="btn" href="venue.html?id=2">View venue &amp; dates</a></p></div>
+    </article>
+    <article class="chapter-static">
+      <div class="chapter-photo"><img src="assets/venue-seabreeze.jpg" alt="Seabreeze Terrace — wedding venue photograph (demo)"></div>
+      <div class="chapter-body"><p class="eyebrow">Chapter III · Karachi · Outdoor</p>
+      <h3 class="chapter-name">Seabreeze Terrace</h3>
+      <p>A small, sea-facing terrace for sunset ceremonies and intimate receptions.</p>
+      <p class="chapter-facts">Up to 300 guests · PKR 240,000 venue fee</p>
+      <p><a class="btn" href="venue.html?id=6">View venue &amp; dates</a></p></div>
+    </article>
+  </div>
+  <div class="chapters-stage" data-chapters-stage hidden></div>
+</section>
 <div class="band"><div class="wrap">
   <p class="eyebrow">How an enquiry works</p>
   <h2>Three steps, no surprises</h2>
@@ -68,5 +106,10 @@
 </div></footer>
 <script src="js/logic.js"></script>
 <script src="js/app.js"></script>
+<script defer src="assets/vendor/gsap.min.js"></script>
+<script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="assets/vendor/SplitText.min.js"></script>
+<script defer src="assets/vendor/lenis.min.js"></script>
+<script defer src="js/premium.js"></script>
 </body>
 </html>
